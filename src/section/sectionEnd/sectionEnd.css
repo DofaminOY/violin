@@ -1,66 +1,88 @@
 /* Загальний стиль для секції */
 .sectionEnd {
-    background-color: #000; /* Чорний фон */
-    color: #fff; /* Білий текст */
-    padding: 50px 20px;
-    text-align: left;
-    font-family: 'Cabin', sans-serif; /* Використовуємо шрифт Cabin */
-  }
-  
-  /* Стиль тексту */
+  background-color: #000; /* Чорний фон */
+  color: #fff; /* Білий текст */
+  padding: 50px 20px;
+  text-align: left;
+  font-family: 'Cabin', sans-serif; /* Використовуємо шрифт Cabin */
+  box-sizing: border-box; /* Враховує padding в розрахунку ширини */
+}
+
+/* Стиль тексту */
+.text-content {
+  width: 100%; /* Займає всю ширину екрана */
+  max-width: 800px; /* Максимальна ширина для великих екранів */
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  word-wrap: break-word; /* Автоматичний перенос слів */
+  padding-left: 5%;  /* Відступ зліва для адаптивного вигляду */
+  padding-right: 5%; /* Відступ справа для уникнення виходу за межі */
+  box-sizing: border-box; /* Враховує padding в загальній ширині */
+}
+
+/* Стиль для абзаців */
+.text-content p {
+  margin-bottom: 20px;
+}
+
+/* Адаптивність для маленьких екранів */
+@media (max-width: 768px) {
   .text-content {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-    line-height: 1.8;
+      font-size: 1rem; /* Зменшення розміру шрифту для планшетів */
+      padding-left: 5%;  /* Адаптивний відступ */
+      padding-right: 5%; /* Адаптивний відступ */
   }
-  
-  .text-content p {
-    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .text-content {
+      font-size: 0.9rem; /* Зменшення для смартфонів */
+      padding-left: 5%;  /* Адаптивний відступ для маленьких екранів */
+      padding-right: 5%; /* Адаптивний відступ для маленьких екранів */
   }
-  
-  /* Стиль для нижнього меню */
-  .footer-menu {
-    margin-top: 50px; /* Відступ зверху */
-    padding: 20px 0;
-    background-color: #000; /* Чорний фон меню */
-    text-align: center;
-  }
-  
-  .footer-navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
+}
+
+/* Стиль для нижнього меню */
+.footer-menu {
+  margin-top: 50px; /* Відступ зверху */
+  padding: 20px 0;
+  background-color: #000; /* Чорний фон меню */
+  text-align: center;
+}
+
+.footer-navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-navbar ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.footer-navbar ul li a {
+  text-decoration: none;
+  color: #fff; /* Білий текст */
+  font-size: 1.2rem;
+  font-family: 'Fredoka', sans-serif; /* Використовуємо друковані букви */
+  letter-spacing: 2px;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.footer-navbar ul li a:hover {
+  color: #4CAF50; /* Зелений колір при наведенні */
+}
+
+/* Адаптивність для маленьких екранів */
+@media (max-width: 480px) {
   .footer-navbar ul li {
-    display: inline-block;
-    margin: 0 15px;
-  }
-  
-  .footer-navbar ul li a {
-    text-decoration: none;
-    color: #fff; /* Білий текст */
-    font-size: 1.2rem;
-    font-family: 'Fredoka', sans-serif; /* Використовуємо друковані букви */
-    letter-spacing: 2px;
-    font-weight: 300;
-    transition: color 0.3s ease;
-  }
-  
-  /* Ефект при наведенні */
-  .footer-navbar ul li a:hover {
-    color: #4CAF50; /* Зелений колір при наведенні */
-  }
-  
-  /* Адаптивність для маленьких екранів */
-  @media (max-width: 480px) {
-    .footer-navbar ul li {
       margin: 10px 5px;
-    }
-  
-    .footer-navbar ul li a {
-      font-size: 1rem;
-    }
   }
-  
+
+  .footer-navbar ul li a {
+      font-size: 1rem;
+  }
+}
