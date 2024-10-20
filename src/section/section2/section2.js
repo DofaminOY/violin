@@ -5,7 +5,7 @@ function Section2() {
   const [hoveredLine, setHoveredLine] = useState(null);
   const [currentPhoto, setCurrentPhoto] = useState(0); // індекс поточного фото
   const [isCarouselActive, setIsCarouselActive] = useState(true); // карусель активна чи ні
-  const [photos, setPhotos] = useState([]); // Масив фото з JSON
+  const [photos, setPhotos] = useState([]); // Масив фото з Lorem Picsum
   const [currentPage, setCurrentPage] = useState(1); // Поточна сторінка для пагінації
   const [visiblePhotos, setVisiblePhotos] = useState([]); // Відображені мініатюри (не більше 5)
   const [showIcon, setShowIcon] = useState(false); // Стан для відображення іконки
@@ -22,7 +22,7 @@ function Section2() {
     setHoveredLine(null);
   };
 
-  // Функція для завантаження фото з пагінацією
+  // Функція для завантаження фото з Lorem Picsum
   const fetchPhotos = async (page = 1, limit = 30) => {
     const response = await fetch(`https://picsum.photos/v2/list?page=${page}&limit=${limit}`);
     const data = await response.json();
@@ -101,21 +101,21 @@ function Section2() {
           onMouseEnter={() => handleMouseEnter('line1')}
           onMouseLeave={handleMouseLeave}
         >
-          VIBRANT PRINTS
+          STRINGS OF PASSION
         </p>
         <p
           className={`fly-text ${hoveredLine === 'line2' ? 'animate-right' : ''}`}
           onMouseEnter={() => handleMouseEnter('line2')}
           onMouseLeave={handleMouseLeave}
         >
-          PATTERNED KNITS
+          PURE EMOTION
         </p>
         <p
           className={`fly-text ${hoveredLine === 'line3' ? 'animate-left' : ''}`}
           onMouseEnter={() => handleMouseEnter('line3')}
           onMouseLeave={handleMouseLeave}
         >
-          BOLD VEGAN LEATHERS
+          ETERNAL MOMENTS
         </p>
       </div>
 
