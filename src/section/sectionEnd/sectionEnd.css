@@ -1,0 +1,66 @@
+/* Загальний стиль для секції */
+.sectionEnd {
+    background-color: #000; /* Чорний фон */
+    color: #fff; /* Білий текст */
+    padding: 50px 20px;
+    text-align: left;
+    font-family: 'Cabin', sans-serif; /* Використовуємо шрифт Cabin */
+  }
+  
+  /* Стиль тексту */
+  .text-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+  
+  .text-content p {
+    margin-bottom: 20px;
+  }
+  
+  /* Стиль для нижнього меню */
+  .footer-menu {
+    margin-top: 50px; /* Відступ зверху */
+    padding: 20px 0;
+    background-color: #000; /* Чорний фон меню */
+    text-align: center;
+  }
+  
+  .footer-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-navbar ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .footer-navbar ul li a {
+    text-decoration: none;
+    color: #fff; /* Білий текст */
+    font-size: 1.2rem;
+    font-family: 'Fredoka', sans-serif; /* Використовуємо друковані букви */
+    letter-spacing: 2px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+  }
+  
+  /* Ефект при наведенні */
+  .footer-navbar ul li a:hover {
+    color: #4CAF50; /* Зелений колір при наведенні */
+  }
+  
+  /* Адаптивність для маленьких екранів */
+  @media (max-width: 480px) {
+    .footer-navbar ul li {
+      margin: 10px 5px;
+    }
+  
+    .footer-navbar ul li a {
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,0 +1,95 @@
+/* Підключаємо Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Fredoka:wght@300..700&display=swap');
+
+/* Основний контейнер */
+.text-container {
+  max-width: 100%; /* Максимальна ширина 100% */
+  padding: 20px;
+  margin: 0 auto;
+  font-family: 'Fredoka', sans-serif; /* Використовуємо шрифт Fredoka для тексту */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: left;
+  color: #333;
+  opacity: 0;
+  transform: translateY(50px); /* Початкове положення трохи нижче */
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Збільшили тривалість і плавність */
+  position: relative;
+  overflow-wrap: break-word; /* Запобігає виходу тексту за межі контейнера */
+}
+
+/* Плавне з'явлення тексту */
+.text-container.visible {
+  opacity: 1;
+  transform: translateY(5%); /* Початково трохи опускаємо текст вниз */
+}
+
+/* Плавний підйом на 5% */
+.text-container.fixed {
+  transform: translateY(-5%); /* Піднімаємо текст на 5% */
+  position: relative;
+  margin-bottom: 20px; /* Забезпечуємо достатній відступ знизу */
+}
+
+/* Кнопка "Contact" */
+.contact-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Відступ зверху після тексту */
+}
+
+.contact-button {
+  background-color: #4CAF50; /* Зелений колір фону */
+  color: white; /* Білий текст */
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 0 30px  0 30px; /* Бордер-радіус на 1-й і 3-й сторонах */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 2px solid #4CAF50; /* Контур кнопки */
+}
+
+/* Ефект при наведенні на кнопку */
+.contact-button:hover {
+  background-color: #45a049; /* Темніший зелений при наведенні */
+  transform: translateY(-3px); /* Підйом кнопки */
+}
+
+/* Забезпечуємо максимальну ширину на великих екранах */
+@media (min-width: 768px) {
+  .text-container {
+    font-size: 1.5rem;
+    max-width: 80%; /* Текст буде займати не більше 80% ширини */
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-container {
+    font-size: 1.6rem;
+    max-width: 70%; /* Текст буде займати не більше 70% ширини */
+    margin-bottom: 60px;
+  }
+}
+
+/* Медіа-запит для дуже малих пристроїв */
+@media (max-width: 480px) {
+  .text-container {
+    font-size: 1rem;
+    padding: 15px;
+    margin-bottom: 20px; /* Додатковий відступ на мобільних пристроях */
+  }
+  
+  .contact-button {
+    font-size: 1rem; /* Менший шрифт на маленьких екранах */
+    padding: 12px 25px; /* Менше відступів на мобільних */
+  }
+}
+
+/* Запобігання накладанню на сусідні блоки */
+.text-container {
+  clear: both; /* Запобігає накладанню тексту на інші елементи сторінки */
+  z-index: 10; /* Встановлюємо порядок накладання, щоб уникнути заїзду */
+}

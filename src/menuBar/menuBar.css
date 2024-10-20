@@ -1,0 +1,146 @@
+/* Основні стилі для сторінки */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Повноекранне меню для мобільної версії */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f7f3ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow-x: hidden;
+}
+
+.fullscreen-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.fullscreen-menu li {
+  margin: 15px 0;
+}
+
+.fullscreen-menu a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 2.5rem;
+  font-family: 'Cabin', sans-serif;
+}
+
+/* Кнопка закриття меню */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  margin-right: 3vw;
+}
+
+/* Адаптивні стилі для мобільної версії */
+@media (max-width: 1300px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+    transform: scale(1.1);
+  }
+}
+
+/* Додаткові стилі для розташування елементів навігації */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #eae2d7;
+  z-index: 9999;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.navbar-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin-left: 20px;
+}
+
+.navbar-menu a {
+  font-family: 'Cabin', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.navbar-menu a:hover {
+  color: #4CAF50;
+}
+
+.separator {
+  color: #fff;
+  margin: 0 10px;
+}
+
+/* Стиль для тексту з максимальним розтягуванням на всю ширину */
+.text-content {
+  width: 100vw; /* Текст займає всю ширину вьюпорта */
+  margin: 0;
+  padding: 0; /* Без зайвих відступів з боків */
+  font-size: 1.5rem; /* Збільшений розмір шрифту */
+  line-height: 1.9; /* Комфортний інтервал між рядками */
+  box-sizing: border-box;
+  text-align: justify; /* Для вирівнювання тексту по ширині */
+}
+
+.text-content p {
+  margin-bottom: 20px;
+}

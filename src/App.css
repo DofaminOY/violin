@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cardo:ital,wght@0,400;0,700;1,400&family=Catamaran:wght@100..900&family=Fredoka:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Fredoka:wght@300..700&display=swap');
+
+h1, h3 {
+  font-family: 'Cabin', sans-serif;
+}
+p {
+  font-family: "Cardo", serif;
+  font-optical-sizing: auto;
+  
+  
+}
+/* Загальні стилі */
+body {
+  max-width: 100vw; /* Обмежує ширину сторінки розміром вікна браузера */
+  overflow-x: hidden; /* Забороняє горизонтальну прокрутку */
+  margin: 0; /* Прибирає будь-які відступи */
+  padding: 0;  
+  box-sizing: border-box;
+  background-color: #f7f3ee; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  touch-action: manipulation; /* Забезпечує коректну взаємодію на сенсорних екранах */
+  -webkit-text-size-adjust: 100%; /* Вимикає масштабування тексту на iOS */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Загальні стилі для секцій */
+.section {
+  width: 100%;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  overflow: hidden;
+  min-height: 80vh;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+/* Секція 1 */
+.section-1 {
+  background-color: #f7f3ee; /* Фон секції 1 */
+  min-height: 80vh; /* Мінімальна висота секції в 80% висоти вікна браузера */
+  overflow: visible; /* Змінюємо overflow на visible, щоб елементи, що виходять за межі, були видимі */
+  position: relative; /* Зберігаємо відносне позиціонування для коректної роботи z-index */
+  z-index: 1; /* Секція 1 з нижчим пріоритетом */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Секція 2 */
+.section-2 {
+  background-color: #d0c4b7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  width: 100%; /* Ширина 100% ширини вікна перегляду */
+  max-width: 100%; /* Запобігання виходу за межі пристрою */
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden; /* Приховує лише горизонтальну прокрутку */
+  z-index: 2; /* Секція 2 з вищим пріоритетом, щоб бути поверх секції 1 */
+  border-radius: -20% 20% -20% 20%;
+}
+
+/* Секція 3 */
+.section-3 {
+  background-color: #f7f3ee; /* Фон секції 3 */
+  min-height: 50vh;
+}
+
+/* Секція 4 */
+.section-4 {
+  background-color: #fff; /* Фон секції 4 */
+  min-height: 50vh;
 }

@@ -1,0 +1,170 @@
+/* Контейнер для секції, що ділить на дві половини */
+.section-2-container {
+  display: flex;
+  justify-content: space-between; /* Простір між текстом і фото */
+  align-items: center;
+  height: 100vh; /* Висота секції */
+  padding: 0 5%; /* Відступи з боків */
+}
+
+/* Ліва частина з текстом */
+.text-overlay {
+  width: 50%; /* Половина для тексту */
+  padding: 20px;
+  text-align: left;
+}
+
+/* Контейнер для фото-каруселі */
+.carousel-wrapper {
+  width: 50%; /* Половина для каруселі */
+  display: flex;
+  flex-direction: column; /* Вертикальне вирівнювання іконок і фото */
+  align-items: center;
+}
+
+/* Контейнер фото */
+.photo-container-2 {
+  width: 100%; /* Займає всю ширину своєї половини */
+  aspect-ratio: 16 / 9; /* Пропорційний прямокутник 16:9 */
+  background-color: #eae2d7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 10px; /* Відступ під фото для іконок */
+  margin: 3vh 0;
+}
+
+/* Фото всередині каруселі */
+.carousel-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Зображення повністю займає контейнер з обрізанням */
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.photo-container-2:hover .carousel-photo {
+  transform: scale(1.05); /* Масштабування при наведенні */
+}
+
+/* Іконки для вибору фото */
+.carousel-icons {
+  display: flex;
+  justify-content: flex-start; /* Розташування мініатюр на початку */
+  gap: 10px; /* Додаємо відступ між іконками */
+  width: 100%; /* Ширина іконок така ж, як у контейнера */
+  padding: 0 5px; /* Невеликий відступ всередині */
+  margin-top: 10px;
+  cursor: grab;
+  overflow-x: auto; /* Дозволяє прокручування */
+}
+
+/* Окремі іконки */
+.carousel-icon {
+  width: calc(100% / 5 - 10px); /* Пропорційна ширина, поділена на 5 іконок */
+  height: auto; /* Висота автоматично підлаштовується під ширину мініатюри */
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: none; /* Видаляємо рамки */
+}
+
+.carousel-icon img {
+  width: 100%; /* Ширина зображення на всю іконку */
+  height: auto; /* Автоматична висота */
+  border-radius: 5px; /* Невелике округлення для мініатюр */
+}
+
+/* Підсвітка активної іконки */
+.carousel-icon.active img {
+  border: 2px solid #333; /* Обрамлення для активного зображення */
+}
+
+/* Ефект при наведенні */
+.carousel-icon:hover img {
+  transform: scale(1.1); /* Масштабування при наведенні */
+}
+
+/* Іконка поверх фото */
+.overlay-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2); /* Напівпрозорий фон */
+  backdrop-filter: blur(10px); /* Ефект скла */
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Білий колір іконки */
+  transition: opacity 1s ease; /* Анімація зникнення */
+  opacity: 1;
+}
+
+/* Анімація іконок плей/пауза */
+.play-icon, .pause-icon {
+  opacity: 1;
+  animation: fadeOut 1s forwards; /* Анімація зникнення */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Стиль тексту */
+.text-overlay p {
+  margin: 10px 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: rgb(14, 13, 13);
+  font-weight: bold;
+  transition: font-size 1s ease, transform 1s ease, opacity 1s ease;
+}
+
+/* Анімація для тексту */
+.fly-text {
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.animate-left {
+  transform: translateX(-30%);
+  opacity: 0;
+}
+
+.animate-right {
+  transform: translateX(30%);
+  opacity: 0;
+}
+
+.fly-text:not(.animate-left):not(.animate-right) {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Медійний запит для адаптації під екрани менше 1300 пікселів */
+@media (max-width: 1300px) {
+  .section-2-container {
+    flex-direction: column; /* Робимо вертикальне вирівнювання тексту і фото */
+    justify-content: center;
+    height: auto; /* Висота секції автоматично підлаштовується під контент */
+  }
+
+  .text-overlay, .carousel-wrapper {
+    width: 100%; /* Текст і фото займають всю ширину */
+    text-align: center; /* Вирівнювання тексту по центру */
+  }
+
+  .carousel-icons {
+    justify-content: center; /* Центруємо мініатюри */
+  }
+}
